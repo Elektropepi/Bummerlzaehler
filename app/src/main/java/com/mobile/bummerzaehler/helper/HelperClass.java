@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 public class HelperClass {
 	private static int UNIQUE_NOTIFICATION_ID = 0;
+	public static final String NOTIFICATION_CHANNEL_ID = "Notification";
 	public static int getUniqueNotificationId()
 	{
 		return ++UNIQUE_NOTIFICATION_ID;
@@ -68,14 +69,14 @@ public class HelperClass {
 	public static NotificationCompat.Builder createNotificationManager(Context c, Intent resultIntent)
 	{
 		NotificationCompat.Builder builder =
-		        new NotificationCompat.Builder(c)
+		        new NotificationCompat.Builder(c, NOTIFICATION_CHANNEL_ID)
 		        .setSmallIcon(R.drawable.notify_icon)
+				.setOngoing(true)
 		        .setContentTitle("Bummerlzähler");
 		
 		resultIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 		resultIntent.setAction(Long.toString(System.currentTimeMillis()));
-PendingIntent pi =  PendingIntent.getActivity(c, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-builder.setOngoing(true);
+		PendingIntent pi =  PendingIntent.getActivity(c, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 		builder.setContentIntent(pi);
 
 		return builder;
