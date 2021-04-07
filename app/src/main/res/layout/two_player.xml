@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!--
+         As the main content view, the view below consumes the entire
+         space available using match_parent in both dimensions.
+    -->
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity" >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:background="@drawable/wood_texture"
+            android:animateLayoutChanges="true"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/llTwoPlayerPoints"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:background="@color/lightwhite">
+                    <Button
+                        android:layout_width="0dip"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:text="1"
+                        android:onClick="onPoint1"
+                        style="@style/TextViewMedium"
+                        android:textColor="#fff" />
+                    <Button
+                        android:layout_width="0dip"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:text="2"
+                        android:onClick="onPoint2"
+                        style="@style/TextViewMedium"
+                        android:textColor="#fff"/>
+                    <Button
+                        android:layout_width="0dip"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:text="3"
+                        android:onClick="onPoint3"
+                        style="@style/TextViewMedium"
+                        android:textColor="#fff" />
+                </LinearLayout>
+
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/llTwoPlayerMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/wood_texture" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center|top"
+                    android:onClick="onScreen">
+                    <LinearLayout
+                        android:id="@+id/llTwoPlayerP1"
+                        android:layout_width="0dip"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/normal_to_light_bg"
+                        android:orientation="vertical">
+                        <com.mobile.bummerzaehler.customViews.FontFitTextView
+                            android:id="@+id/tvTwoPlayerP1"
+                            style="@style/TextViewGame" />
+                        <TextView
+                            android:id="@+id/tvTwoPlayerGeberP1"
+                            style="@style/TextViewGeber" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            >
+
+                            <TextView
+                                android:id="@+id/tvTwoPlayerBummerlP1"
+                                style="@style/TextViewOverview"
+                                android:gravity="center"
+                                android:paddingTop="0dp"
+                                android:padding="3dp"
+                                android:drawableRight="@drawable/bummerl"
+                                android:text="2 x " />
+
+                            <TextView
+                                android:id="@+id/tvTwoPlayerSchneiderP1"
+                                android:text="2 x "
+                                android:paddingTop="0dp"
+                                android:padding="3dp"
+                                android:gravity="center"
+                                android:drawableRight="@drawable/schneider"
+                                style="@style/TextViewOverview" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/llTwoPlayerP2"
+                        android:layout_width="0dip"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/normal_to_light_bg"
+                        android:orientation="vertical">
+                        <com.mobile.bummerzaehler.customViews.FontFitTextView
+                            android:id="@+id/tvTwoPlayerP2"
+                            style="@style/TextViewGame" />
+                        <TextView
+                            android:id="@+id/tvTwoPlayerGeberP2"
+                            style="@style/TextViewGeber"  />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            >
+
+                            <TextView
+                                android:id="@+id/tvTwoPlayerBummerlP2"
+                                style="@style/TextViewOverview"
+                                android:gravity="center"
+                                android:paddingTop="0dp"
+                                android:padding="3dp"
+                                android:drawableRight="@drawable/bummerl"
+                                android:text="2 x " />
+
+                            <TextView
+                                android:id="@+id/tvTwoPlayerSchneiderP2"
+                                android:text="2 x "
+                                android:paddingTop="0dp"
+                                android:padding="3dp"
+                                android:gravity="center"
+                                android:drawableRight="@drawable/schneider"
+                                style="@style/TextViewOverview" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    style="@style/HorizontalLine"/>
+                <ScrollView
+                    android:id="@+id/svTwoPlayerMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:background="@drawable/wood_texture">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:onClick="onStatusOverview"
+                        android:gravity="center|top">
+                        <TextView
+                            android:id="@+id/tvTwoPlayerPointsP1"
+                            android:layout_width="0dip"
+                            android:layout_weight="0.4"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:gravity="center"
+                            style="@style/TextViewHuge" />
+                        <View
+                            style="@style/VerticalLine"
+                            />
+                        <TextView
+                            android:id="@+id/tvTwoPlayerPointsP2"
+                            android:layout_width="0dip"
+                            android:layout_weight="0.4"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:gravity="center"
+                            style="@style/TextViewHuge"/>
+                    </LinearLayout>
+                </ScrollView>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                    <TextView
+                        android:layout_weight="0.1"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvTwoPlayerFullPointsP1"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:text="0"
+                        style="@style/TextViewMedium"
+                        android:gravity="left"/>
+                    <TextView
+                        android:layout_weight="0.1"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvTwoPlayerFullPointsP2"
+                        android:paddingBottom="10dp"
+                        android:paddingRight="10dp"
+                        android:text="0"
+                        style="@style/TextViewMedium"
+                        android:gravity="right"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/llTwoPlayerGameOver"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:visibility="gone"
+                android:gravity="center"
+                android:background="@drawable/wood_texture_green">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <ImageView
+                        android:id="@+id/ivTwoPlayerBummerlGameOver"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/bummerl_big"
+                        />
+                    <ImageView
+                        android:id="@+id/ivTwoPlayerSchneiderGameOver"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/schneider_big"
+                        />
+                    <TextView
+                        android:id="@+id/tvTwoPlayerGameOverName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        style="@style/TextViewHuge">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tvTwoPlayerGameOverBummerl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        style="@style/TextViewGameOverBummerl"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <Button
+                            android:layout_width="0dip"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:layout_margin="10dp"
+                            android:text="Revanche"
+                            android:onClick="onRevanche"
+                            style="@style/TextViewMedium"
+                            android:textColor="#fff" />
+                        <Button
+                            android:layout_width="0dip"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:layout_margin="10dp"
+                            android:text="Neustart"
+                            android:onClick="onRestart"
+                            style="@style/TextViewMedium"
+                            android:textColor="#fff"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Endergebnis anschauen"
+                        android:textStyle="normal"
+                        android:gravity="center"
+                        style="@style/TextViewBig">
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/tvTwoPlayerGameOverRevert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Rückgängig machen"
+                        android:textStyle="italic"
+                        android:gravity="center"
+                        style="@style/TextViewMedium"/>
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout >
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--
+         android:layout_gravity="start" tells DrawerLayout to treat
+         this as a sliding drawer on the left side for left-to-right
+         languages and on the right side for right-to-left languages.
+         The drawer is given a fixed width in dp and extends the full height of
+         the container. A solid background is used for contrast
+         with the content view.
+    -->
+
+    <ListView
+        android:id="@+id/left_drawer"
+        style="@style/NavigationDrawer" />
+
+</android.support.v4.widget.DrawerLayout>

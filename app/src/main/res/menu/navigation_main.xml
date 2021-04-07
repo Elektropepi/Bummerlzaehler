@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/action_start_game"
+        android:icon="@drawable/send_arrow"
+        android:showAsAction="always"
+        android:title="Spiel starten"/>
+    <item
+        android:id="@+id/action_save_game"
+        android:icon="@drawable/save"
+        android:showAsAction="always"
+        android:title="Spiel speichern"/>
+
+</menu>

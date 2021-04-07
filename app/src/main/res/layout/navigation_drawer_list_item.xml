@@ -1,0 +1,28 @@
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:gravity="center|left"
+    android:background="@drawable/itemselected_bg">
+
+    <ImageView
+        android:id="@+id/ivNavigationItemImage"
+        android:layout_width="100dip"
+        android:layout_margin="20dip"
+        android:layout_height="40dip"
+        android:gravity="center"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tvNavigationItemTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:gravity="center|start"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textSize="15sp"
+        android:textColor="#888"/>
+
+</LinearLayout>

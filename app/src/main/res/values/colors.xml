@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+    <item name="nocolor" type="color">#00ffffff</item>
+    <item name="lightwhite" type="color">#40ffffff</item><!-- 25% white -->
+    <item name="selectedbrown" type="color">#b3a595</item>
+    <item name="selectedbrownlight" type="color">#66b3a595</item>
+    
+    <item name="brown" type="color">#937a5d</item>
+    <item name="brownlight" type="color">#cc937a5d</item>
+    </resources>

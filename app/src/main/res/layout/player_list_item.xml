@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:padding="5dp">
+    <TextView
+        android:id="@+id/tvPlayerListItemName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="Gangsta"
+    android:textSize="20sp"
+    android:padding="5dp"
+        />
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+        
+<LinearLayout 
+    style="@style/PlayerListItem_Main" >
+    <TextView
+    android:text="@string/two_players"
+    style="@style/PlayerListItem_Heading"
+        />
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+<LinearLayout 
+   style="@style/PlayerListItem_Sub"
+    >
+    <TextView
+        android:id="@+id/tvPlayerListItem2PBummerl"
+    style="@style/PlayerListItem_Bummerl"
+        />
+    <TextView
+        android:id="@+id/tvPlayerListItem2PSchneider"
+   style="@style/PlayerListItem_Schneider"
+        />
+</LinearLayout>
+     <TextView
+        android:id="@+id/tvPlayerListItem2PAverage"
+   style="@style/PlayerListItem_Average"
+        />
+</LinearLayout>
+<TextView
+        android:id="@+id/tvPlayerListItem2PWonGames"
+    style="@style/PlayerListItem_WonGames"
+        />
+</LinearLayout>
+
+<LinearLayout 
+    style="@style/PlayerListItem_Main" >
+    <TextView
+    android:text="@string/three_players"
+    style="@style/PlayerListItem_Heading"
+        />
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+<LinearLayout 
+   style="@style/PlayerListItem_Sub"
+    >
+    <TextView
+        android:id="@+id/tvPlayerListItem3PBummerl"
+    style="@style/PlayerListItem_Bummerl"
+        />
+    <TextView
+        android:id="@+id/tvPlayerListItem3PSchneider"
+   style="@style/PlayerListItem_Schneider"
+        />
+</LinearLayout>
+     <TextView
+        android:id="@+id/tvPlayerListItem3PAverage"
+   style="@style/PlayerListItem_Average"
+        />
+</LinearLayout>
+<TextView
+        android:id="@+id/tvPlayerListItem3PWonGames"
+    style="@style/PlayerListItem_WonGames"
+        />
+</LinearLayout>
+
+<LinearLayout 
+    style="@style/PlayerListItem_Main" >
+    <TextView
+    android:text="@string/four_players"
+    style="@style/PlayerListItem_Heading"
+        />
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+<LinearLayout 
+   style="@style/PlayerListItem_Sub"
+    >
+    <TextView
+        android:id="@+id/tvPlayerListItem4PBummerl"
+    style="@style/PlayerListItem_Bummerl"
+        />
+    <TextView
+        android:id="@+id/tvPlayerListItem4PSchneider"
+   style="@style/PlayerListItem_Schneider"
+        />
+</LinearLayout>
+     <TextView
+        android:id="@+id/tvPlayerListItem4PAverage"
+   style="@style/PlayerListItem_Average"
+        />
+</LinearLayout>
+<TextView
+        android:id="@+id/tvPlayerListItem4PWonGames"
+    style="@style/PlayerListItem_WonGames"
+        />
+</LinearLayout>
+    
+
+</LinearLayout>
+
+</LinearLayout>

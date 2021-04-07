@@ -1,0 +1,86 @@
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center|top"
+    android:padding="10dp"
+    android:background="@drawable/history_itemselected_bg">
+    <LinearLayout 
+        android:layout_width="0dip"
+        android:layout_weight="0.4"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+    android:orientation="vertical">
+    <com.mobile.bummerzaehler.customViews.FontFitTextView
+        android:id="@+id/tvHistoryFourPlayerP1"
+        style="@style/TextViewGameHistory" />
+    <com.mobile.bummerzaehler.customViews.FontFitTextView
+        android:id="@+id/tvHistoryFourPlayerP2"
+        style="@style/TextViewGameHistory" />
+     <LinearLayout
+        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tvHistoryFourPlayerBummerlT1"
+            style="@style/TextViewOverview"
+            android:gravity="center"
+        android:paddingTop="0dp"
+    android:padding="3dp"
+    android:drawableRight="@drawable/bummerl"
+            android:text="2 x " />
+        
+        <TextView
+        android:id="@+id/tvHistoryFourPlayerSchneiderT1"
+        android:text="2 x "
+        android:paddingTop="0dp"
+    android:padding="3dp"
+    android:gravity="center"
+    android:drawableRight="@drawable/schneider"
+        style="@style/TextViewOverview" />
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:id="@+id/llHistoryFourPlayerP2"
+        android:layout_width="0dip"
+        android:layout_weight="0.4"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/normal_to_light_bg"
+    android:orientation="vertical">
+     <com.mobile.bummerzaehler.customViews.FontFitTextView
+        android:id="@+id/tvHistoryFourPlayerP3"
+        style="@style/TextViewGameHistory" />
+    <com.mobile.bummerzaehler.customViews.FontFitTextView
+        android:id="@+id/tvHistoryFourPlayerP4"
+        style="@style/TextViewGameHistory" />
+     <LinearLayout
+        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tvHistoryFourPlayerBummerlT2"
+            style="@style/TextViewOverview"
+            android:gravity="center"
+        android:paddingTop="0dp"
+    android:padding="3dp"
+    android:drawableRight="@drawable/bummerl"
+            android:text="2 x " />
+        
+        <TextView
+        android:id="@+id/tvHistoryFourPlayerSchneiderT2"
+        android:text="2 x "
+        android:paddingTop="0dp"
+    android:padding="3dp"
+    android:gravity="center"
+    android:drawableRight="@drawable/schneider"
+        style="@style/TextViewOverview" />
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Bummerlzähler</string>
+    <string name="two_players">Zwara</string>
+    <string name="three_players">Dreier</string>
+    <string name="four_players">Vierer</string>
+    <string name="create_player">Spieler erstellen</string>
+    <string name="players">Alle Spieler</string>
+    <string name="options">Optionen</string>
+    <string name="history">Verlauf</string>
+    <string name="invalid_character">Ungültiges Zeichen du Vulltrottl</string>
+    <string name="empty_text">Du Wabbla gib an Namen ein</string>
+    <string name="invalid_selection">Wähl an Spieler aus du Kouffa</string>
+    <string name="player_exists">Den Spieler gibts scho du Blitzbian</string>
+    <string name="same_player_name">Zwa gleiche kennen net miteinanda spieln du Pfoustn</string>
+    <!-- Navigation Drawer -->
+    <string-array name="menu_array">
+        <item>Home</item>
+        <item>Zwara</item>
+        <item>Dreier</item>
+        <item>Vierer</item>
+        <item>Spieler</item>
+        <item>Verlauf</item>
+        <item>Optionen</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+</resources>

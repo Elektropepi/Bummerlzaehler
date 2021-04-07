@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!--
+         As the main content view, the view below consumes the entire
+         space available using match_parent in both dimensions.
+    -->
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity" >
+        <ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wood_texture">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+        android:gravity="center|top">
+         <TextView
+        style="@style/OptionsGroupTextView"
+        android:text="Geberreihenfolge nach Bummerl" />
+    <View
+        style="@style/OptionsGroupDivider"/>
+    <RadioGroup
+            android:id="@+id/rgGeber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rbAfterFullGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Der nächste in der Bummerlreihenfolge" 
+        style="@style/OptionsTextView"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rbAfterRound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Der nächste in der Rundenreihenfolge"
+        style="@style/OptionsTextView"
+            android:checked="false" />
+
+    </RadioGroup>
+    <TextView
+        style="@style/OptionsGroupTextView"
+        android:text="Sperrbildschirm" />
+    <View
+        style="@style/OptionsGroupDivider"/>
+    <CheckBox 
+        android:id="@+id/cbIsOverLockscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aktives Spiel über Sperrbildschirm anzeigen"
+        style="@style/OptionsTextView"
+        android:checked="true"/>
+    
+    
+    <TextView
+        style="@style/OptionsGroupTextView"
+        android:text="Benachrichtigungsleiste" />
+    <View
+        style="@style/OptionsGroupDivider"/>
+    <CheckBox 
+        android:id="@+id/cbIsNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aktives Spiel in der Benachrichtigungsleiste anzeigen"
+        style="@style/OptionsTextView"
+        android:checked="true"/>
+    <TextView
+        style="@style/OptionsGroupTextView"
+        android:text="Bummerlzähler zurücksetzen" />
+    <View
+        style="@style/OptionsGroupDivider"/>
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        style="@style/OptionsTextView"
+         android:text="@string/two_players" 
+        android:layout_height="wrap_content"
+        android:layout_width="0dip"
+        android:layout_weight="0.5"
+        />
+    <Button
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:layout_width="0dip"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:text="Zurücksetzen"
+        android:onClick="onReset2"
+        />
+    
+    </LinearLayout>
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        style="@style/OptionsTextView"
+         android:text="@string/three_players" 
+        android:layout_height="wrap_content"
+        android:layout_width="0dip"
+        android:layout_weight="0.5"
+        />
+    <Button
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:layout_width="0dip"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:text="Zurücksetzen"
+        android:onClick="onReset3"
+        />
+    
+    </LinearLayout>
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        style="@style/OptionsTextView"
+         android:text="@string/four_players" 
+        android:layout_height="wrap_content"
+        android:layout_width="0dip"
+        android:layout_weight="0.5"
+        />
+    <Button
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:layout_width="0dip"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:text="Zurücksetzen"
+        android:onClick="onReset4"
+        />
+    
+    </LinearLayout>
+<TextView
+        style="@style/OptionsGroupTextView"
+        android:text="Bummerlzähler sichern" />
+    <View
+        style="@style/OptionsGroupDivider"/>
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:layout_width="0dip"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:text="Importieren"
+        android:onClick="onImport"
+        />
+    <Button
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:layout_width="0dip"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:text="Exportieren"
+        android:onClick="onExport"
+        />
+    
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
+</RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--
+         android:layout_gravity="start" tells DrawerLayout to treat
+         this as a sliding drawer on the left side for left-to-right
+         languages and on the right side for right-to-left languages.
+         The drawer is given a fixed width in dp and extends the full height of
+         the container. A solid background is used for contrast
+         with the content view.
+    -->
+
+    <ListView
+        android:id="@+id/left_drawer"
+        style="@style/NavigationDrawer" />
+
+</android.support.v4.widget.DrawerLayout>

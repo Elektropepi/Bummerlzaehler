@@ -1,0 +1,216 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:textColor">#fff</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
+    <item name="android:actionBarTabBarStyle">@style/MyActionBarTabBarStyle</item>
+        <item name="android:icon">@android:color/transparent</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/log_texture</item>
+        <item name="android:titleTextStyle">@style/TitleTextStyle</item>
+  </style>
+<style name="MyActionBarTabStyle" parent="android:style/Widget.Holo.Light.ActionBar.TabBar">
+    <item name="android:background">@drawable/tabselected</item>
+    <item name="android:gravity">center</item>
+</style>
+<style name="MyActionBarTabBarStyle" parent="android:style/Widget.Holo.Light.ActionBar.TabBar">
+        <item name="android:showDividers">none</item>
+        
+</style> 
+  <style name="TitleTextStyle" >
+    <item name="android:textColor">#fff</item>
+    <item name="android:gravity">center</item>
+    <item name="android:textSize">25sp</item>
+  </style>
+    
+    <style name="TextViewBig">
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+    
+    
+    <style name="TextViewGameOverBummerl">
+        <item name="android:typeface">serif</item>
+         <item name="android:textStyle">italic</item>
+     <item name="android:textSize">18sp</item>
+     <item name="android:layout_marginTop">20dp</item>
+    </style>
+    <style name="TextViewHuge">
+        <item name="android:typeface">serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+    <style name="HorizontalLine">
+        <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">1dp</item>
+    <item name="android:background">#fff</item>
+    </style>
+    <style name="VerticalLine">
+        <item name="android:layout_height">fill_parent</item>
+    <item name="android:layout_width">1dp</item>
+    <item name="android:background">#fff</item>
+    </style>
+    <style name="TextViewMedium">
+          <item name="android:layout_width">wrap_content</item>
+         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+     <style name="TextViewGame" parent="TextViewMedium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+     </style>
+     <style name="TextViewGameHistory" parent="TextViewGame">
+     </style>
+     <style name="TextViewGeber" parent="TextViewMini">
+          <item name="android:layout_width">wrap_content</item>
+         <item name="android:layout_height">wrap_content</item>
+         <item name="android:paddingLeft">10dp</item>
+         <item name="android:paddingBottom">5dp</item>
+         <item name="android:text">GEBER</item>
+         <item name="android:layout_gravity">center</item>
+         <item name="android:background">@drawable/normal_to_light_bg</item>
+         <item name="android:visibility">invisible</item>
+     </style>
+     <style name="TextViewOverview" parent="TextViewMini">
+          <item name="android:layout_width">wrap_content</item>
+         <item name="android:layout_height">wrap_content</item>
+         <item name="android:paddingLeft">10dp</item>
+         <item name="android:paddingBottom">10dp</item>
+     </style>
+     <style name="TextViewVS" parent="TextViewBig">
+         <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">0.2</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:onClick">onVs</item>
+        <item name="android:text">VS</item>
+     </style>
+    <style name="PointsButton">
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">0.4</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_margin">10dp</item>
+       <item name="android:textColor">#fff</item>
+    </style>
+    <style name="TextViewMini">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="TextViewSmall">
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="ImageButtonBig">
+       <item name="android:padding">20dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+     <style name="OptionsGroupTextView">
+         <item name="android:layout_gravity">start</item>
+          <item name="android:layout_width">wrap_content</item>
+         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+       <item name="android:textColor">#88ffffff</item>
+       <item name="android:paddingTop">7dp</item>
+       <item name="android:paddingBottom">7dp</item>
+       </style>
+     <style name="OptionsGroupDivider">
+          <item name="android:layout_width">match_parent</item>
+         <item name="android:layout_height">1dp</item>
+       <item name="android:background">#88ffffff</item>
+       <item name="android:layout_marginBottom">10dp</item>
+    </style>
+    <style name="OptionsTextView">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+    <style name="NavigationDrawer">
+        <item name="android:id">@id/left_drawer</item>
+        <item name="android:layout_width">240dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:choiceMode">singleChoice</item>
+        <item name="android:divider">@android:color/transparent</item>
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:background">#fff</item>
+    </style>
+   <!-- player adapter -->
+   
+    <style name="PlayerListItem_Main">
+        <item name="android:layout_weight">0.1</item>
+    <item name="android:layout_width">0dip</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:orientation">vertical</item>
+    <item name="android:padding">5dp</item>
+    </style>
+    
+    <style name="PlayerListItem_Heading">
+        <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:gravity">center</item>
+    <item name="android:textSize">15sp</item>
+    <item name="android:textStyle">italic</item>
+    </style>
+    
+    <style name="PlayerListItem_Sub">
+     <item name="android:layout_weight">0.5</item>
+    <item name="android:layout_width">0dip</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:orientation">vertical</item>
+    <item name="android:paddingLeft">5dp</item>
+    </style>
+    
+    <style name="PlayerListItem_Bummerl" parent="TextViewMini">
+        <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:drawableRight">@drawable/bummerl</item>
+    <item name="android:text">2 * </item>
+    </style>
+    
+    <style name="PlayerListItem_Schneider" parent="TextViewMini">
+         <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:drawableRight">@drawable/schneider</item>
+    <item name="android:text">1 * </item>
+    </style>
+    
+    <style name="PlayerListItem_Average" parent="TextViewSmall">
+         <item name="android:layout_weight">0.5</item>
+    <item name="android:layout_width">0dip</item>
+    <item name="android:gravity">center</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:text">0.89</item>
+    <item name="android:drawableLeft">@drawable/average</item>
+    </style>
+    
+    <style name="PlayerListItem_WonGames" parent="TextViewSmall">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:gravity">center</item>
+    <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    
+</resources>

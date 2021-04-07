@@ -1,0 +1,122 @@
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"    
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center|top"
+    android:padding="10dp">
+     <LinearLayout 
+        android:id="@+id/llHistoryThreePlayerP1"
+        android:layout_width="0dip"
+        android:layout_weight="0.4"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@drawable/normal_to_light_bg"
+    android:orientation="vertical">
+    
+    <com.mobile.bummerzaehler.customViews.FontFitTextView
+        android:id="@+id/tvHistoryThreePlayerP1"
+        style="@style/TextViewGame" />
+    <LinearLayout
+        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tvHistoryThreePlayerBummerlP1"
+            style="@style/TextViewOverview"
+            android:gravity="center"
+        android:paddingTop="0dp"
+    android:padding="3dp"
+    android:drawableRight="@drawable/bummerl"
+            android:text="2 x " />
+        
+        <TextView
+        android:id="@+id/tvHistoryThreePlayerSchneiderP1"
+        android:text="2 x "
+        android:paddingTop="0dp"
+    android:padding="3dp"
+    android:gravity="center"
+    android:drawableRight="@drawable/schneider"
+        style="@style/TextViewOverview" />
+    </LinearLayout>
+    </LinearLayout>
+        
+         <LinearLayout 
+        android:id="@+id/llHistoryThreePlayerP2"
+        android:layout_width="0dip"
+        android:layout_weight="0.4"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@drawable/normal_to_light_bg"
+    android:orientation="vertical">
+    <com.mobile.bummerzaehler.customViews.FontFitTextView
+        android:id="@+id/tvHistoryThreePlayerP2"
+        style="@style/TextViewGame" />
+    <LinearLayout
+        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tvHistoryThreePlayerBummerlP2"
+            style="@style/TextViewOverview"
+            android:gravity="center"
+        android:paddingTop="0dp"
+    android:padding="3dp"
+    android:drawableRight="@drawable/bummerl"
+            android:text="2 x " />
+        
+        <TextView
+        android:id="@+id/tvHistoryThreePlayerSchneiderP2"
+        android:text="2 x "
+        android:paddingTop="0dp"
+    android:padding="3dp"
+    android:gravity="center"
+    android:drawableRight="@drawable/schneider"
+        style="@style/TextViewOverview" />
+    </LinearLayout>
+    </LinearLayout>
+        
+         <LinearLayout 
+        android:id="@+id/llHistoryThreePlayerP3"
+        android:layout_width="0dip"
+        android:layout_weight="0.4"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@drawable/normal_to_light_bg"
+    android:orientation="vertical">
+    <com.mobile.bummerzaehler.customViews.FontFitTextView
+        android:id="@+id/tvHistoryThreePlayerP3"
+        style="@style/TextViewGame" />
+    <LinearLayout
+        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tvHistoryThreePlayerBummerlP3"
+            style="@style/TextViewOverview"
+            android:gravity="center"
+        android:paddingTop="0dp"
+    android:padding="3dp"
+    android:drawableRight="@drawable/bummerl"
+            android:text="2 x " />
+        
+        <TextView
+        android:id="@+id/tvHistoryThreePlayerSchneiderP3"
+        android:text="2 x "
+        android:paddingTop="0dp"
+    android:padding="3dp"
+    android:gravity="center"
+    android:drawableRight="@drawable/schneider"
+        style="@style/TextViewOverview" />
+    </LinearLayout>
+    </LinearLayout>
+    
+</LinearLayout>
