@@ -194,7 +194,7 @@ public class FourPlayerActivity extends ParentActivity {
         	else
         	{
         		pn1 = players[0];
-        		shortP1 = pn1.substring(0,3);
+        		shortP1 = HelperClass.getShortName(pn1);
         	}
         	if(players[1].equals("---"))
         	{
@@ -204,7 +204,7 @@ public class FourPlayerActivity extends ParentActivity {
         	else
         	{
         		pn2 = players[1];
-        		shortP2 = pn2.substring(0,3);
+        		shortP2 = HelperClass.getShortName(pn2);
         	}
         	if(players[2].equals("---"))
         	{
@@ -214,7 +214,7 @@ public class FourPlayerActivity extends ParentActivity {
         	else
         	{
         		pn3 = players[2];
-        		shortP3 = pn3.substring(0,3);
+        		shortP3 = HelperClass.getShortName(pn3);
         	}
         	if(players[3].equals("---"))
         	{
@@ -224,7 +224,7 @@ public class FourPlayerActivity extends ParentActivity {
         	else
         	{
         		pn4 = players[3];
-        		shortP4 = pn4.substring(0,3);
+        		shortP4 = HelperClass.getShortName(pn4);
         	}
         	tv1.setText(pn1);
             tv2.setText(pn2);

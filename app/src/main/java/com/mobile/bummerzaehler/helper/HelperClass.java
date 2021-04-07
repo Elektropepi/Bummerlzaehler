@@ -29,6 +29,13 @@ public class HelperClass {
 	{
 		Toast.makeText(c,text,Toast.LENGTH_LONG).show();
 	}
+	public static String getShortName(String name)
+	{
+		if(name.length() < 3) {
+			return name;
+		}
+		return name.substring(0, 3);
+	}
 	public static void showYesNoCloseGame(final Activity a)
 	{
 		DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {

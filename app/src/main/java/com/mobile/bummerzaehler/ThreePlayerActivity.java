@@ -201,7 +201,7 @@ public class ThreePlayerActivity extends ParentActivity {
     	else
     	{
     		pl1 = players[0];
-    		shortP1 = pl1.substring(0,3);
+    		shortP1 = HelperClass.getShortName(pl1);
     	}
     	if(players[1].equals("---"))
     	{
@@ -211,7 +211,7 @@ public class ThreePlayerActivity extends ParentActivity {
     	else
     	{
     		pl2 = players[1];
-    		shortP2 = pl2.substring(0,3);
+    		shortP2 = HelperClass.getShortName(pl2);
     	}
     	if(players[2].equals("---"))
     	{
@@ -221,7 +221,7 @@ public class ThreePlayerActivity extends ParentActivity {
     	else
     	{
     		pl3 = players[2];
-    		shortP3 = pl3.substring(0,3);
+    		shortP3 = HelperClass.getShortName(pl3);
     	}
            tv1.setText(pl1);
            tv2.setText(pl2);

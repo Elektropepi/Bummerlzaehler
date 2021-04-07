@@ -163,7 +163,7 @@ public class TwoPlayerActivity extends ParentActivity {
         	else
         	{
         		p1 = players[0];
-        		shortP1 = p1.substring(0,3);
+        		shortP1 = HelperClass.getShortName(p1);
         	}
         	if(players[1].equals("---"))
         	{
@@ -173,7 +173,7 @@ public class TwoPlayerActivity extends ParentActivity {
         	else
         	{
         		p2 = players[1];
-        		shortP2 = p2.substring(0,3);
+        		shortP2 = HelperClass.getShortName(p2);
         	}
            tv1.setText(p1);
            tv2.setText(p2);
