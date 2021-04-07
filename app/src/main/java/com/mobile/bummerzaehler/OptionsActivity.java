@@ -4,10 +4,7 @@ package com.mobile.bummerzaehler;
 
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -18,7 +15,6 @@ import com.mobile.bummerzaehler.bummerl.Bummerl3PController;
 import com.mobile.bummerzaehler.bummerl.Bummerl4PController;
 import com.mobile.bummerzaehler.bummerl.BummerlController;
 import com.mobile.bummerzaehler.helper.HelperClass;
-import com.mobile.bummerzaehler.player.Player;
 import com.mobile.bummerzaehler.player.PlayerController;
 
 import android.app.Activity;
@@ -27,21 +23,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
+import android.os.ParcelFileDescriptor;
 import android.preference.PreferenceManager;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 public class OptionsActivity extends ParentActivity {
 	private SharedPreferences preferences;
@@ -151,52 +140,46 @@ public class OptionsActivity extends ParentActivity {
 		    .setNegativeButton("Na", dialogClickListener).show();
 		
 	}
-    public void onImport(View v)
+	private static final int READ_REQUEST_CODE = 42;
+	private static final int WRITE_REQUEST_CODE = 43;
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent resultData) {
+		if (resultCode != Activity.RESULT_OK || resultData == null) {
+			return;
+		}
+		switch(requestCode) {
+			case READ_REQUEST_CODE: {
+				Uri uri = resultData.getData();
+				readRaw(uri);
+				break;
+			}
+			case WRITE_REQUEST_CODE: {
+				Uri uri = resultData.getData();
+				writeToSDFile(uri);
+				break;
+			}
+		}
+	}
+
+	public void onImport(View v)
     {
-    	readRaw();	
+    	// Source: http://android-doc.github.io/guide/topics/providers/document-provider.html
+		Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+		intent.addCategory(Intent.CATEGORY_OPENABLE);
+		intent.setType("*/*");
+		startActivityForResult(intent, READ_REQUEST_CODE);
     }
     public void onExport(View v)
     {
-    checkExternalMedia();
-    writeToSDFile();
+		Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+		intent.addCategory(Intent.CATEGORY_OPENABLE);
+		intent.setType("text/plain");
+		intent.putExtra(Intent.EXTRA_TITLE, "Bummerlzähler Backup.txt");
+		startActivityForResult(intent, WRITE_REQUEST_CODE);
     }
-    
-    private void checkExternalMedia(){
-        boolean mExternalStorageAvailable = false;
-      boolean mExternalStorageWriteable = false;
-      String state = Environment.getExternalStorageState();
 
-      if (Environment.MEDIA_MOUNTED.equals(state)) {
-          // Can read and write the media
-          mExternalStorageAvailable = mExternalStorageWriteable = true;
-      } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-          // Can only read the media
-          mExternalStorageAvailable = true;
-          mExternalStorageWriteable = false;
-      } else {
-          // Can't read or write
-          mExternalStorageAvailable = mExternalStorageWriteable = false;
-      }   
-      System.out.println("options.check:\nExternal Media: readable="
-              +mExternalStorageAvailable+" writable="+mExternalStorageWriteable);
-  }
-
-  /** Method to write ascii text characters to file on SD card. Note that you must add a 
-     WRITE_EXTERNAL_STORAGE permission to the manifest file or this method will throw
-     a FileNotFound Exception because you won't have write permission. */
-
-    
-    private File getBackupDir()
-    {
-    	File root = android.os.Environment.getExternalStorageDirectory(); 
-		String path = root.getAbsolutePath() + "/Bummerlzaehler";
-      System.out.println("options.getBackupDir: External file system root: "+root);
-
-      // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
-      return new File (path);
-    }
-    private static String BACKUP_NAME = "bummerlzaehler.txt";
-  private void writeToSDFile(){
+  	private void writeToSDFile(Uri uri){
 
 	   final SharedPreferences preferences;
 			preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -204,21 +187,10 @@ public class OptionsActivity extends ParentActivity {
 			String b3P = preferences.getString(Bummerl3PController.BUMMERL, "");
 			String b4P = preferences.getString(Bummerl4PController.BUMMERL, "");
 			String players = preferences.getString(PlayerController.PLAYERS, "");
-     
-
-      // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
-      File dir = getBackupDir();
-      dir.mkdirs();
-
-      // initiate media scan and put the new things into the path array to
-      // make the scanner aware of the location and the files you want to see
-     // MediaScannerConnection.scanFile(this, new String[] {path + "bummerlzaehler.txt"}, null, null);
-         MediaScannerConnection.scanFile(this, new String[] { dir.getAbsolutePath() }, null, null);
-         sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(dir)));
-      File file = new File(dir, BACKUP_NAME);
 
       try {
-          FileOutputStream f = new FileOutputStream(file);
+		  ParcelFileDescriptor parcelFileDescriptor = getContentResolver().openFileDescriptor(uri, "w");
+		  FileOutputStream f = new FileOutputStream(parcelFileDescriptor.getFileDescriptor());
           PrintWriter pw = new PrintWriter(f);
           pw.println(players);
           pw.println(b2P);
@@ -227,43 +199,26 @@ public class OptionsActivity extends ParentActivity {
           pw.flush();
           pw.close();
           f.close();
-
-          // initiate media scan and put the new things into the path array to
-          // make the scanner aware of the location and the files you want to see
-         // MediaScannerConnection.scanFile(this, new String[] {path + "bummerlzaehler.txt"}, null, null);
-             MediaScannerConnection.scanFile(this, new String[] { file.getAbsolutePath() }, null, null);
-             
-
-
-      } catch (FileNotFoundException e) {
-          e.printStackTrace();
-          Log.i("Options.write","******* File not found. Did you" +
-                  " add a WRITE_EXTERNAL_STORAGE permission to the   manifest?");
+		  parcelFileDescriptor.close();
+		  int plC = players.length() == 0 ? 0 : players.split(";").length;
+		  int b2PC = b2P.length() == 0 ? 0 : b2P.split(";").length;
+		  int b3PC = b3P.length() == 0 ? 0 : b3P.split(";").length;
+		  int b4PC = b4P.length() == 0 ? 0 : b4P.split(";").length;
+		  HelperClass.showLongToast("Es wurden "+plC+" Spieler, "+b2PC+" Zwara Spiele, "+b3PC+" Dreier Spiele, "+b4PC+" Vierer Spiele gesichert!", this);
       } catch (IOException e) {
           e.printStackTrace();
-      }   
-      int plC = players.length() == 0 ? 0 : players.split(";").length;
-      int b2PC = b2P.length() == 0 ? 0 : b2P.split(";").length;
-      int b3PC = b3P.length() == 0 ? 0 : b3P.split(";").length;
-      int b4PC = b4P.length() == 0 ? 0 : b4P.split(";").length;
-      HelperClass.showLongToast("Es wurden "+plC+" Spieler, "+b2PC+" Zwara Spiele, "+b3PC+" Dreier Spiele, "+b4PC+" Vierer Spiele in der Datei "+file+" gesichert!", this);
+		  HelperClass.showLongToast("Beim Speichern ist folgender Fehler aufgetreten: " + e.getMessage(), this);
+      }
   }
 
   /** Method to read in a text file placed in the res/raw directory of the application. The
     method reads in all lines of the file sequentially. */
 
-  private void readRaw(){
-	  
-	  System.out.println("\nData read from res/raw/textfile.txt:");
-	  File dir = getBackupDir();
-	//Get the text file
-	  File file = new File(dir,BACKUP_NAME);
-
-	  if(file.exists())
-	  {
+  private void readRaw(Uri uri)  {
 
 	  try {
-	      BufferedReader br = new BufferedReader(new FileReader(file));
+		  InputStream inputStream = getContentResolver().openInputStream(uri);
+		  BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
 	      String line;
 	      int i = 0;
 			String players = ""; 
@@ -281,6 +236,7 @@ public class OptionsActivity extends ParentActivity {
 	          i++;
 	      }
 	      br.close();
+		  inputStream.close();
 	      final String pl = players;
 
 	      final String b2 = b2P;
@@ -326,12 +282,8 @@ public class OptionsActivity extends ParentActivity {
 	  }
 	  catch (IOException e) {
 	      //You'll need to add proper error handling here
+		  e.printStackTrace();
 	  }
-	  }
-	  else
-	  {
-		  HelperClass.showLongToast("Die Sicherungsdatei "+file.getAbsolutePath() + " ist nicht vorhanden!\nWurde noch keine Sicherung erstellt?", this);
-	  }
-      System.out.println("\n\nThat is all");
+	  System.out.println("\n\nThat is all");
   }
 }
