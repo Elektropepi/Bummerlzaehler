@@ -10,20 +10,16 @@ import com.mobile.bummerzaehler.bummerl.Bummerl2PController;
 import com.mobile.bummerzaehler.bummerl.Bummerl3PController;
 import com.mobile.bummerzaehler.bummerl.Bummerl4PController;
 import com.mobile.bummerzaehler.bummerl.BummerlController;
-import com.mobile.bummerzaehler.helper.HelperClass;
 import com.mobile.bummerzaehler.listadapter.History3PListAdapter;
 import com.mobile.bummerzaehler.listadapter.History4PListAdapter;
 import com.mobile.bummerzaehler.listadapter.History2PListAdapter;
 
-import java.util.List;
-
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.res.Resources;
-import android.support.v4.view.PagerAdapter;
-import android.util.SparseArray;
+
+import androidx.viewpager.widget.PagerAdapter;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

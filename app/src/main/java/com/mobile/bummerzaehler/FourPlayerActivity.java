@@ -2,47 +2,31 @@ package com.mobile.bummerzaehler;
 
 
 
-import com.mobile.bummerzaehler.bummerl.AllBummerls2P;
 import com.mobile.bummerzaehler.bummerl.AllBummerls4P;
-import com.mobile.bummerzaehler.bummerl.Bummerl2PController;
 import com.mobile.bummerzaehler.bummerl.Bummerl4PController;
 import com.mobile.bummerzaehler.helper.HelperClass;
 import com.mobile.bummerzaehler.oldgame.OldGame4P;
 import com.mobile.bummerzaehler.oldgame.OldGames4PController;
 import com.mobile.bummerzaehler.player.Player;
 
-import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.drawable.TransitionDrawable;
-import android.net.Uri;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.NotificationCompat;
-import android.view.KeyEvent;
-import android.view.Menu;
+import androidx.core.app.NotificationCompat;
+
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.Transformation;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 public class FourPlayerActivity extends ParentActivity {

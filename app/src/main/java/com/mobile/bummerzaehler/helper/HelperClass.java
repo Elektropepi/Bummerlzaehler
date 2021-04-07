@@ -1,12 +1,6 @@
 package com.mobile.bummerzaehler.helper;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-import com.mobile.bummerzaehler.CreatePlayerActivity;
-import com.mobile.bummerzaehler.MainActivity;
-import com.mobile.bummerzaehler.OptionsActivity;
 import com.mobile.bummerzaehler.R;
-import com.mobile.bummerzaehler.TwoPlayerActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -16,10 +10,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v4.app.NotificationCompat;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+
+import androidx.core.app.NotificationCompat;
+
 import android.widget.Toast;
 
 public class HelperClass {

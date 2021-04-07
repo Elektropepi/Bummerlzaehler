@@ -4,10 +4,6 @@
     android:versionCode="140"
     android:versionName="1.4" android:installLocation="auto">
 
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="21" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     
     <application

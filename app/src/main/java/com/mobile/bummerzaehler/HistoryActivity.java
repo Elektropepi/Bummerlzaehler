@@ -3,31 +3,13 @@ package com.mobile.bummerzaehler;
 
 
 
-import java.util.ArrayList;
-
-import com.mobile.bummerzaehler.bummerl.AllBummerls4P;
-import com.mobile.bummerzaehler.bummerl.Bummerl4PController;
 import com.mobile.bummerzaehler.customViews.CustomPagerAdapter;
 import com.mobile.bummerzaehler.customViews.CustomPagerEnum;
-import com.mobile.bummerzaehler.helper.HelperClass;
-import com.mobile.bummerzaehler.listadapter.History4PListAdapter;
-import com.mobile.bummerzaehler.listadapter.NavigationListAdapter;
-import com.mobile.bummerzaehler.listadapter.NavigationListModel;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
+import androidx.viewpager.widget.ViewPager;
 
 public class HistoryActivity extends ParentActivity {
     @Override
