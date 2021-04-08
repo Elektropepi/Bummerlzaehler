@@ -1,13 +1,7 @@
 # Bummerlzähler
 
-<img style="width:25%; margin:1rem; display:block;" alt="Startbildschirm" src="screenshots/Screenshot_1.png" />
-<img style="width:25%; margin:1rem; display:block;" alt="Optionen" src="screenshots/Screenshot_2.png" />
-<img style="width:25%; margin:1rem; display:block;" alt="Navigation" src="screenshots/Screenshot_3.png" />
-<img style="width:25%; margin:1rem; display:block;" alt="4rer Start" src="screenshots/Screenshot_4.png" />
-<img style="width:25%; margin:1rem; display:block;" alt="2er Bummerl" src="screenshots/Screenshot_5.png" />
-<img style="width:25%; margin:1rem; display:block;" alt="3er Bummerl" src="screenshots/Screenshot_6.png" />
-<img style="width:25%; margin:1rem; display:block;" alt="Verlauf" src="screenshots/Screenshot_7.png" />
-<img style="width:25%; margin:1rem; display:block;" alt="4rer Bummerl Ende" src="screenshots/Screenshot_8.png" />
+![Startbildschirm, Optionen, Navigation, 4rer Start](screenshots/Screenshots_1.png)
+![2er Bummerl, 3er Bummerl, Verlauf, 4rer Bummerl Ende](screenshots/Screenshots_2.png)
  
 Keinen Zettel bei der Hand? Nirgends ein Bummerlzähler? Schlechtes Kurzzeitgedächtnis?
 
