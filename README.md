@@ -1,4 +1,5 @@
 # Bummerlzähler
+Wous? Open Source Bummerlzähler?? Bistu moped schau tatsächlich!
 
 ![Startbildschirm, Optionen, Navigation, 4rer Start](screenshots/Screenshots_1.png)
 ![2er Bummerl, 3er Bummerl, Verlauf, 4rer Bummerl Ende](screenshots/Screenshots_2.png)
@@ -26,5 +27,3 @@ Durch die Verwendung hochkomplexer mathematischer Formeln wird das Zusammenzähl
 ## Ist es nicht einfacher einen Editor zu öffnen und dort mitzuschreiben?
 - Hör auf mit diesen deppaten Fragen und lad endlich die App herunter!
 
-## Das Beste kommt zum Schluss
-Die Bummerzähler App ist komplett Open Source. Somit kannst du sogar einer wildfremden App deine hochsensiblen Bummerl Statistiken anvertrauen.
