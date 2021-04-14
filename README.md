@@ -1,8 +1,12 @@
+![BootBoi Logo](app/src/main/res/drawable-xxhdpi/main_icon.png)
+
+[![BootBoi Screenshots](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.mobile.bummerzaehler)
+
 # Bummerlzähler
 Wous? Open Source Bummerlzähler?? Bistu moped schau tatsächlich!
 
-![Startbildschirm, Optionen, Navigation, 4rer Start](screenshots/Screenshots_1.png)
-![2er Bummerl, 3er Bummerl, Verlauf, 4rer Bummerl Ende](screenshots/Screenshots_2.png)
+![Startbildschirm, Optionen, Navigation, 4rer Start](images/Screenshots_1.png)
+![2er Bummerl, 3er Bummerl, Verlauf, 4rer Bummerl Ende](images/Screenshots_2.png)
  
 ## Keinen Zettel bei der Hand? Nirgends ein Bummerlzähler? Schlechtes Kurzzeitgedächtnis?
 
