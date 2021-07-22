@@ -54,9 +54,6 @@ public class History3PListAdapter extends BaseAdapter {
 
 	/******** What is the size of Passed Arraylist Size ************/
 	public int getCount() {
-
-		if (data.size() <= 0)
-			return 1;
 		return data.size();
 	}
 
