@@ -1,6 +1,7 @@
 ![BootBoi Logo](app/src/main/res/drawable-xxhdpi/main_icon.png)
 
 [![BootBoi Screenshots](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.mobile.bummerzaehler)
+[![BootBoi Screenshots](images/fdroid-badge.png)](https://f-droid.org/packages/com.mobile.bummerzaehler)
 
 # Bummerlzähler
 Wous? Open Source Bummerlzähler?? Bistu moped schau tatsächlich!
