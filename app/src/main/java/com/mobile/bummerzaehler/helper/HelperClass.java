@@ -76,7 +76,7 @@ public class HelperClass {
 		
 		resultIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 		resultIntent.setAction(Long.toString(System.currentTimeMillis()));
-		PendingIntent pi =  PendingIntent.getActivity(c, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+		PendingIntent pi =  PendingIntent.getActivity(c, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 		builder.setContentIntent(pi);
 
 		return builder;

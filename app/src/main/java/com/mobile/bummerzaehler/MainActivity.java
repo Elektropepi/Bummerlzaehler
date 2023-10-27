@@ -5,18 +5,13 @@ package com.mobile.bummerzaehler;
 
 import com.mobile.bummerzaehler.helper.HelperClass;
 
-import android.app.Activity;
+import android.Manifest;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 public class MainActivity extends ParentActivity {
 
@@ -34,6 +29,9 @@ public class MainActivity extends ParentActivity {
     }
 
     private void createNotificationChannel() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+			requestPermissions(new String[] { Manifest.permission.POST_NOTIFICATIONS }, 1);
+		}
 		// Source: https://developer.android.com/training/notify-user/build-notification#java
 		// In newer SDK versions, notification is not shown when a channel isn't registered
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -48,7 +46,6 @@ public class MainActivity extends ParentActivity {
 			NotificationManager notificationManager = getSystemService(NotificationManager.class);
 			notificationManager.createNotificationChannel(channel);
 		}
-
 	}
     
     public void twoPlayersStart(View v)
